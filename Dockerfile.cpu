@@ -1,0 +1,7 @@
+FROM tensorflow/tensorflow:1.13.1-py3 
+
+COPY entrypoints/ /entrypoints
+
+RUN apt-get update && apt-get install -y cmake libopenmpi-dev zlib1g-dev git
+
+ENTRYPOINT [ "/entrypoints/entrypoint.sh" ]
