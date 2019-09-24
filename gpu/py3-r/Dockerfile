@@ -1,10 +1,10 @@
 FROM tensorflow/tensorflow:1.14.0-gpu-py3
 
-COPY ../entrypoints/ /entrypoints
+COPY entrypoints/ /entrypoints
 
 RUN apt-get update && apt-get install -y cmake libopenmpi-dev zlib1g-dev git libsm6 libxext6 libxrender-dev libglib2.0-0 r-base
 
-ADD ../requirements.R requirements.R
+ADD requirements.R requirements.R
 RUN Rscript requirements.R
 
 ENTRYPOINT [ "entrypoints/entrypoint.sh" ]
