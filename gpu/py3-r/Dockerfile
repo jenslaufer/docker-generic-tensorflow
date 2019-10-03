@@ -16,4 +16,4 @@ RUN pip install --upgrade pip && pip install rpy2
 ADD requirements.R requirements.R
 RUN Rscript requirements.R
 
-ENTRYPOINT [ "entrypoints/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoints/entrypoint.sh" ]
